@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megan Louie - Experience</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #FF8C42; /* Orange */
+            --secondary-color: #FFF4E0; /* Cream */
+            --accent-color: #E76F51; /* Darker orange */
+            --text-color: #5D4037; /* Dark brown */
+            --light-text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Montserrat', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        body {
+            color: var(--text-color);
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+            border: 2px solid var(--light-text);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        .page-header {
+            margin-top: 80px;
+            padding: 60px 0;
+            background-image: url('meganlouie.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            color: var(--light-text);
+            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); /* Adds a dark overlay for text contrast */
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--light-text);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow for better visibility */
+        }
+
+        .page-header p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--light-text);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 80px;
+            padding: 60px 0;
+            background-color: var(--secondary-color);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .page-header p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            padding: 80px 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 30px 40px;
+            box-sizing: border-box;
+            margin-bottom: 50px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            top: 50%;
+            transform: translateY(-50%);
+            right: -10px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+            right: auto;
+        }
+
+        .timeline-content {
+            padding: 30px;
+            background-color: var(--light-text);
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-date {
+            position: absolute;
+            top: 10px;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-date {
+            right: 10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-date {
+            left: 10px;
+        }
+
+        .timeline-content h3 {
+            margin-top: 15px;
+            font-size: 22px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content h4 {
+            font-size: 18px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content ul {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .timeline-content li {
+            margin-bottom: 8px;
+        }
+
+        .skills-section {
+            background-color: var(--secondary-color);
+            padding: 80px 0;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .skills-column {
+            flex: 0 0 48%;
+        }
+
+        .skills-column h3 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .skill-item {
+            margin-bottom: 20px;
+        }
+
+        .skill-item h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #1d4e73;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Education Section */
+        .education-section {
+            padding: 80px 0;
+            background-color: #f1f7fc;
+        }
+
+        .education-card {
+            background-color: var(--light-text);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .education-card h3 {
+            font-size: 22px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .education-card h4 {
+            font-size: 18px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .education-card p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: var(--light-text);
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(odd) {
+                text-align: left;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-date {
+                left: 10px;
+                right: auto;
+            }
+
+            .timeline-item::after {
+                left: 10px;
+                right: auto;
+            }
+
+            .skills-column {
+                flex: 0 0 100%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    Megan Louie
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Professional Experience</h1>
+            <p>My professional journey and skill set in project management, IT, and business technology.</p>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 40px; color: var(--primary-color);">Work Experience Timeline</h2>
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Dec 2024 - Present</span>
+                        <h3>Project Manager</h3>
+                        <h4>Eat Together, Seattle, WA</h4>
+                        <ul>
+                            <li>Led cross-functional Agile teams to develop a community dining app with 400+ users</li>
+                            <li>Managed Agile sprints and backlog using JIRA</li>
+                            <li>Defined and optimized product roadmap</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Oct 2024 - Present</span>
+                        <h3>IT Project Manager</h3>
+                        <h4>UW Information Technology, Seattle, WA</h4>
+                        <ul>
+                            <li>Led integration of IT ticketing platforms (ServiceNow)</li>
+                            <li>Developed Power BI dashboards for real-time insights</li>
+                            <li>Facilitated weekly Agile working sessions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jun 2023 - Jun 2024</span>
+                        <h3>IT Network Analyst / Network Project Manager Intern</h3>
+                        <h4>UW Information Technology, Seattle, WA</h4>
+                        <ul>
+                            <li>Managed IT network projects across 400+ schools and 30 libraries</li>
+                            <li>Resolved 95% of 30+ network tickets within 15 minutes</li>
+                            <li>Collaborated with Technical Program Managers on security plans</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jun 2024 - Aug 2024</span>
+                        <h3>Technology Risk Assurance Consultant Intern</h3>
+                        <h4>Ernst & Young, Seattle, WA</h4>
+                        <ul>
+                            <li>Conducted IT audits and documented 60+ ITGCs and ITACs across 15+ OpCos</li>
+                            <li>Leveraged Alteryx to automate data analysis</li>
+                            <li>Designed Microsoft Power BI dashboards to visualize audit findings</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Sep 2022 - Dec 2022</span>
+                        <h3>Growth and Strategy Intern</h3>
+                        <h4>Jolteon (B2C Startup), Palo Alto, CA</h4>
+                        <ul>
+                            <li>Spearheaded the development of a go-to-market strategy focused on Gen-Z engagement</li>
+                            <li>Conducted high-volume outreach to 50+ student clubs weekly</li>
+                            <li>Successfully onboarded and managed 10+ new student organizations per week</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Experience 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jul 2022 - Sep 2022</span>
+                        <h3>Sales and Marketing Intern</h3>
+                        <h4>Broadmark Realty Capital, Seattle, WA</h4>
+                        <ul>
+                            <li>Conducted comprehensive ROI and KPI analysis on 5,000+ contacts</li>
+                            <li>Analyzed competitor customer databases using Excel and data visualization tools</li>
+                            <li>Assisted in the development of data-driven marketing strategies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="index.html" class="back-button">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 40px; color: var(--primary-color);">Professional Skills</h2>
+
+            <div class="skills-container">
+                <div class="skills-column">
+                    <h3>Technical Skills</h3>
+
+                    <div class="skill-item">
+                        <h4>Python, SQL, and R</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <h4>Microsoft Office Suite (Advanced Excel)</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <h4>Agile Project Management (Scrum/Kanban)</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <h4>Statistical Data Analysis</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <h4>Cisco Networking (TCP/IP, DNS, Hardware)</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-column">
+                    <h3>Soft Skills</h3>
+
+                    <div class="skill-item">
+                        <h4>Cross-functional Leadership</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <h4>Product Roadmap Development & Execution</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <h4>Client Management</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 92%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <h4>Agile Development</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 94%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <h4>Strategic Planning</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 40px; color: var(--primary-color);">Education</h2>
+
+            <div class="education-card">
+                <h3>Master of Science in Information Systems</h3>
+                <h4>University of Washington, Michael G. Foster School of Business</h4>
+                <p>MSIS Merit Scholarship | Expected: June 2025</p>
+            </div>
+
+            <div class="education-card">
+                <h3>B.A. in Business Administration</h3>
+                <h4>University of Washington, Michael G. Foster School of Business</h4>
+                <p>Information Systems, Operations and Supply Chain Management | June 2024</p>
+                <p>Magna Cum Laude, Quarterly Dean's List 2021-2024, Albert V. Rossi (Merit) Scholarship</p>
+            </div>
+
+            <div class="education-card">
+                <h3>Relevant Coursework</h3>
+                <p>Business Data Analysis, Artificial Intelligence Innovation, Machine Learning, Cybersecurity Risk Management, Cloud Computing, Digital Transformation, Decision Models, Advanced Business Data Mining</p>
+            </div>
+
+            <div class="education-card">
+                <h3>Certificates</h3>
+                <p>Foster Microsoft Excel Credential, Microsoft Certified Azure Fundamentals</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Megan Z. Louie. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://linkedin.com/in/meganlouie" target="_blank">LinkedIn</a>
+                <a href="mailto:megan.louie3@gmail.com">Email</a>
+                <a href="tel:2067249769">206.724.9769</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
